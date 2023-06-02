@@ -9,7 +9,7 @@ function roll() {
     const spaceElement = document.getElementById("space");
     let result = rollDie();
     space += result;
-    imgId = `<img class='diceImg' src='/img/dice01_a_0${String(result)}.png' style='width: 48px;'>`
+    imgId = `<img class='diceImg' src='img/dice01_a_0${String(result)}.png' style='width: 48px;'>`
     target.innerHTML = imgId;
     if (space >= 50) {
         spaceElement.innerHTML = "GOAL!<br>Roll a die to restart."
