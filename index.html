@@ -5,38 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sugoroku</title>
-    <script>
-        let space = 1;
-        function rollDie(){
-            die = Math.floor((Math.random() * 6)) + 1;
-            return(die);
-        }
-        function roll() {
-            const target = document.getElementById("result");
-            const spaceElement = document.getElementById("space");
-            let result = rollDie();
-            space += result;
-            target.innerHTML = result;
-            if(space >= 50){
-                spaceElement.innerHTML = "GOAL!<br>Roll a die to restart."
-                space = 1;
-            }else{
-                spaceElement.innerHTML = "You are in " + space + indicator(space) + " space";
-            }                      
-        }
-        function indicator (i) {
-            let cent = i % 100
-            if (cent >= 10 && cent <= 20) return 'th'
-            let dec = i % 10
-            if (dec === 1) return 'st'
-            if (dec === 2) return 'nd'
-            if (dec === 3) return 'rd'
-            return 'th'
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
 </head>
 <body>
-    <h1>Press button to roll a die</h1>
+    <h1>Press button to roll a die!</h1>
     <input type="button" value="Roll a die" onclick="roll();">
     <h1>result:<span id="result">You haven't rolled the dice yet</span></h1>
     <h2><span id="space">You are in 1st space</span></h2>
