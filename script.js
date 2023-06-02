@@ -19,9 +19,12 @@ function roll() {
     console.log(playerSpace);
     const target = document.getElementById("result");
     const spaceElement = document.getElementById("space" + String(player));
-    
+    const turn = document.getElementById("player");
+
     imgId = `<img class='diceImg' src='img/dice01_a_0${String(result)}.png' style='width: 48px;'>`
     target.innerHTML = imgId;
+
+    turn.innerHTML = `Player${player + 1},`
 
     if (playerSpace >= 50) {
         spaceElement.innerHTML = "GOAL!"
